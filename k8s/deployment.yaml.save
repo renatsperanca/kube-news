@@ -1,0 +1,24 @@
+# criar deployment do postgres
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec: 
+  selector:
+    matchLabels:
+      app: postgre
+  template:
+    metadata:
+      labels:
+        apps: postgre
+    spec:
+      containers:
+        - name: postgre
+          image: postgres:14.3
+          ports:
+            - containerPort: 5432
+	  env:
+          - name: POSTGRES_PASSWORD
+	    v
+alue: "renata4321"
+
